@@ -8,7 +8,7 @@ $password = "1234";
 $dbname = "calendar";
 
 //connectsions
-$conn = new mysqli($servername, $username, $passworda, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -16,10 +16,10 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
-    $passworda = $_POST['passworda'];
+    $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, username, role FROM users WHERE username=? AND passworda=?");
-    $stmt->bind_param("ss", $username, $passworda);
+    $stmt = $conn->prepare("SELECT id, username, role FROM users WHERE username=? AND password=?");
+    $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
 
     $stmt->bind_result($id, $username, $role);
