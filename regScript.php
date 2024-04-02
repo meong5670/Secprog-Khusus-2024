@@ -2,9 +2,11 @@
 session_start();
 
 $servername = "localhost";
-$username = "admin";
-$password = "1234";
+$username = "root";
+$password = "";
 $dbname = "calendar";
+
+$connect = mysqli_connect("localhost", "root", "", "calendar");
 
 // Database connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,19 +20,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Check if password matches confirm password
+    // check true ornt
     if ($password !== $confirm_password) {
         echo "Passwords do not match";
         exit();
     }
 
-    // Hash the password before storing in the database
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Role will be 'User'
     $role = 'User';
 
-    // Prepare and execute statement to insert user data into database
     $stmt = $conn->prepare("INSERT INTO users (username, password, role) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $username, $hashed_password, $role);
 

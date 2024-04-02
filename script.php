@@ -3,9 +3,11 @@ session_start();
 
 
 $servername = "localhost";
-$username = "admin";
-$password = "1234";
+$username = "root";
+$password = "";
 $dbname = "calendar";
+
+$connect = mysqli_connect("localhost", "root", "", "calendar");
 
 //connectsions
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -31,9 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['role'] = $role;
 
         if ($role == 'Admin') {
-            header("location: aCalendar.html");
+            header("location: index.php");
         } elseif ($role == 'Member') {
-            header("location: mCalendar.html");
+            header("location: index.php");
         }
     } else {
         echo "Invalid username or password";
