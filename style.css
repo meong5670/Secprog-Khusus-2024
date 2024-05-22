@@ -1,0 +1,115 @@
+/* General Styles */
+body {
+    background-color: #2E2E2E;
+    color: #E0E0E0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #FFD700;
+}
+
+a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Form Styles */
+form {
+    background-color: #3E3E3E;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #5E5E5E;
+    background-color: #4E4E4E;
+    color: #E0E0E0;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus {
+    border-color: #FFD700;
+    outline: none;
+}
+
+button {
+    background-color: #FFD700;
+    color: #2E2E2E;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFC700;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #5E5E5E;
+}
+
+th {
+    background-color: #4E4E4E;
+    color: #FFD700;
+}
+
+td {
+    background-color: #3E3E3E;
+}
+
+/* Navigation */
+nav {
+    background-color: #4E4E4E;
+    padding: 10px;
+}
+
+nav a {
+    margin-right: 10px;
+    color: #FFD700;
+}
+
+/* Footer */
+footer {
+    background-color: #4E4E4E;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #FFD700;
+}
