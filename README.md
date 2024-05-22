@@ -1,0 +1,1 @@
+aduh pusing(sedikit)
